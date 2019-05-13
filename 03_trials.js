@@ -2,18 +2,66 @@
 
 
 const trial_info = {
-    forced_choice: [
+    key_press_choice: [
         {
-            question: "What's on the bread?",
-            picture: "images/question_mark_02.png",
-            option1: 'jam',
-            option2: 'ham'
+          question: "Are this figures the same or different?",
+          picture: "images/1_50_different.jpg",
+          key1: 's',
+          key2: 'd',
+          s: 'same',
+          d: 'different',
+          expected: 'different',
+          degree: "50",
+          picture_number: "1",
+          picture_object: "different"
         },
         {
-            question: "What's the weather like?",
-            picture: "images/weather.jpg",
-            option1: "shiny",
-            option2: "rainbow"
+          question: "Are this figures the same or different?",
+          picture: "images/1_50_same.jpg",
+          key1: 's',
+          key2: 'd',
+          s: 'same',
+          d: 'different',
+          expected: 'same',
+          degree: "50",
+          picture_number: "1",
+          picture_object: "same"
+        },
+        {
+          question: "Are this figures the same or different?",
+          picture: "images/2_150_different.jpg",
+          key1: 's',
+          key2: 'd',
+          s: 'same',
+          d: 'different',
+          expected: 'different',
+          degree: "150",
+          picture_number: "2",
+          picture_object: "different"
+        },
+        {
+          question: "Are this figures the same or different?",
+          picture: "images/2_150_same.jpg",
+          key1: 's',
+          key2: 'd',
+          s: 'same',
+          d: 'different',
+          expected: 'same',
+          degree: "150",
+          picture_number: "2",
+          picture_object: "same"
+        },
+        {
+          question: "Are this figures the same or different?",
+          picture: "images/4_50_same.jpg",
+          key1: 's',
+          key2: 'd',
+          s: 'same',
+          d: 'different',
+          expected: 'same',
+          degree: "50",
+          picture_number: "4",
+          picture_object: "same"
         }
     ]
 };

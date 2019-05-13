@@ -23,14 +23,7 @@ const intro = babeViews.intro({
     trials: 1,
     name: 'intro',
     // If you use JavaScripts Template String `I am a Template String`, you can use HTML <></> and javascript ${} inside
-    text:   `This is a sample introduction view.
-            <br />
-            <br />
-            The introduction view welcomes the participant and gives general information
-            about the experiment. You are in the <strong>${coin}</strong> group.
-            <br />
-            <br />
-            This is a minimal experiment with one forced choice view. It can serve as a starting point for programming your own experiment.`,
+    text:   `This is a minimal experiment with the mental-rotation-task.`,
    buttonText: 'Begin the experiment'
 });
 
@@ -39,10 +32,14 @@ const instructions = babeViews.instructions({
     trials: 1,
     name: 'instrucions',
     title: 'General Instructions',
-    text:  `This is a sample instructions view.
+    text:  `Two pictures with each one geometric figure is shown and need to be compared
             <br />
             <br />
-            Tell your participants what they are to do here.`,
+            The figures can be the same but rotated or be different figueres. Your task is to seleceted,
+            if the figures are the same or not. For the same figure press s. For different figures press d.
+            <br />
+            <br />
+            Please be as accuracy and fast as possible.`,
     buttonText: 'go to trials'
 });
 
@@ -102,15 +99,14 @@ const thanks = babeViews.thanks({
 
 
 // Here, we initialize a forcedChoice view
-const forced_choice_2A = babeViews.forcedChoice({
+const key_press_choice_2A = babeViews.keyPress({
     // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
-    trials: trial_info.forced_choice.length,
+    trials: trial_info.key_press_choice.length,
     // name and trial_type should be identical to the variable name
-    name: 'forced_choice_2A',
-    trial_type: 'forced_choice_2A',
-    data: trial_info.forced_choice
+    name: 'key_press_choice_2A',
+    trial_type: 'key_press_choice_2A',
+    data: trial_info.key_press_choice
 });
 
 // There are many more templates available:
 // forcedChoice, sliderRating, dropdownChoice, testboxInput, ratingScale, imageSelection, sentenceChoice, keyPress, selfPacedReading and selfPacedReading_ratingScale
-
