@@ -28,7 +28,7 @@ const intro = babeViews.view_generator('intro',{
 });
 
 // For most tasks, you need instructions views
-const instructions = babeViews.view_generator('instructions',{
+const instructions_practice = babeViews.view_generator('instructions',{
     trials: 1,
     name: 'instrucions',
     title: 'General Instructions',
@@ -37,6 +37,19 @@ const instructions = babeViews.view_generator('instructions',{
             <br />
             The figures can be the same but rotated or be different figueres. Your task is to seleceted,
             if the figures are the same or not. For the same figure press s. For different figures press d.
+            This is a practice task. You will see 12 pictures and get after each picture a feedback if your
+            answer was correct or not.
+            <br />
+            <br />
+            Please be as accuracy and fast as possible.`,
+    buttonText: 'go to practices trials'
+});
+const instructions_main = babeViews.view_generator('instructions',{
+    trials: 1,
+    name: 'instrucions',
+    title: 'Main Instructions',
+    text:  `Now your are at the main trails. Here you wouldn't get a feedback. You will see
+            48 pictures.
             <br />
             <br />
             Please be as accuracy and fast as possible.`,
@@ -99,13 +112,31 @@ const thanks = babeViews.view_generator('thanks',{
 
 
 // Here, we initialize a forcedChoice view
-const key_press_choice_2A = babeViews.view_generator('key_press',{
+const key_press_choice_practice = babeViews.view_generator('key_press',{
     // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
-    trials: trial_info.key_press_choice.length,
+    trials: 12,
     // name and trial_type should be identical to the variable name
-    name: 'key_press_choice_2A',
-    trial_type: 'key_press_choice_2A',
-    data: trial_info.key_press_choice
+    name: 'key_press_choice_practice',
+    trial_type: 'key_press_choice_practice',
+    data:_.shuffle(trial_practice.key_press_choice),
+    hook: {
+    after_response_enabled: check_response
+},
+    pause: 1000,
+    fix_duration: 500
+
+});
+const key_press_choice_main = babeViews.view_generator('key_press',{
+    // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
+    trials: 48,
+    // name and trial_type should be identical to the variable name
+    name: 'key_press_choice_main',
+    trial_type: 'key_press_choice_main',
+    data: _.shuffle(trial_main.key_press_choice),
+    hook: {
+    pause: 1000,
+    fix_duration: 500
+  }
 });
 
 // There are many more templates available:
